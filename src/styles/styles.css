@@ -1,0 +1,6 @@
+/* style.css */
+@unocss;
+
+html.dark {
+  @apply bg-neutral-900 text-white;
+}
