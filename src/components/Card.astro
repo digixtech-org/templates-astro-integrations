@@ -1,0 +1,16 @@
+---
+import SvelteButton from "@components/SvelteButton.svelte";
+const { title } = Astro.props;
+---
+
+<div class="m-4 w-1/4 rounded-lg bg-neutral-200 p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+  <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+    {title}
+  </h5>
+  <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Phasellus faucibus
+    scelerisque eleifend donec pretium vulputate.
+  </p>
+  <SvelteButton text="Svelte Button" />
+</div>

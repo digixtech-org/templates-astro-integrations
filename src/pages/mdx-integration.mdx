@@ -1,0 +1,21 @@
+---
+layout: "@layouts/MdxLayout.astro"
+title: "MDX Integration"
+author: "MIBAatWORK"
+date: "11 Oct 2023"
+---
+import { Image } from 'astro:assets';
+import myImportedImage from '@assets/the_universe_from_earth.jpg';
+import Card from "@components/Card.astro";
+
+## MDX Integration Page with Layout
+
+<section class="w-full my-10 flex flex-row justify-center">
+  <Card title="CARD 1" />
+  <Card title="CARD 2" />
+  <Card title="CARD 3" />
+</section>
+
+<section class="my-10 rounded-3xl border-1 mx-auto overflow-hidden">
+    <Image src={myImportedImage} alt="the universe from earth" />
+</section>

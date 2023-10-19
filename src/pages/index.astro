@@ -1,0 +1,23 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import ThemeToggle from "@components/ThemeToggle.astro";
+
+import SvelteButton from "@components/SvelteButton.svelte";
+import OneTimePayment from "@components/OneTimePayment.astro";
+const readme = await Astro.glob('../../README.md');
+import {Content as Readme} from "../../README.md";
+---
+
+<MainLayout title="Home Page">
+  <main class="flex flex-row justify-center w-full">
+    <section class="markdown dark:markdown-invert markdown-truegray markdown-overwrite">
+      <Readme />
+    </section>
+  </main>
+</MainLayout>
+
+<style>
+  .markdown-overwrite {
+      @apply py-10 max-w-3/4 text-xl;
+  }
+</style>

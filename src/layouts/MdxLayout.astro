@@ -1,0 +1,29 @@
+---
+import "@styles/styles.css";
+import { ViewTransitions } from "astro:transitions";
+import Header from "@components/Header.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+
+// 1. The frontmatter prop gives access to frontmatter and other data
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="p-2 flex flex-col text-center justify-center">
+  <Header transition:persist />
+    <h1 class="py-10 text-2xl font-bold">
+      {frontmatter.title} by
+      <span class="text-sm align-baseline">{frontmatter.author}</span>
+    </h1>
+    <slot />
+    <p>Written on: {frontmatter.date}</p>
+  </body>
+</html>
