@@ -1,14 +1,12 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
-
-const readme = await Astro.glob('../../README.md');
-import {Content as Readme} from "../../README.md";
+const readmeData = await Astro.glob('../../README.md');
 ---
 
 <MainLayout title="Home Page">
   <main class="flex flex-row justify-center w-full">
     <section class="markdown dark:markdown-invert markdown-truegray markdown-overwrite">
-      <Readme />
+      <Fragment set:html={readmeData[0].compiledContent()} />
     </section>
   </main>
 </MainLayout>
